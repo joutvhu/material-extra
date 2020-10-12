@@ -1,4 +1,4 @@
-@import "../timepicker.variable";
+@import "../timepicker-variable";
 
 :host.mate-timepicker-dialog-body {
   display: flex;
@@ -13,7 +13,7 @@
 
   ::ng-deep .mate-timepicker-face {
     user-select: none;
-    color: var(--foreground-text);
+    //color: var(--foreground-text);
 
     .clock-face {
       display: flex;
@@ -48,12 +48,12 @@
             font-weight: 500;
           }
 
-          &.active {
-            span {
-              //color: mat-color($app-ui-primary, default-contrast);
-              //background: mat-color($app-ui-primary);
-            }
-          }
+          //&.active {
+          //  span {
+          //    color: mat-color($app-ui-primary, default-contrast);
+          //    background: mat-color($app-ui-primary);
+          //  }
+          //}
         }
 
         .clock-face__inner {
@@ -99,33 +99,9 @@
             //background-color: mat-color($app-ui-primary, default-contrast);
             border-radius: 50%;
             box-sizing: content-box;
+            border-width: 8px;
+            border-style: solid;
             //border: 8px solid mat-color($app-ui-primary);
-          }
-        }
-      }
-
-      &.hour-face {
-        .clock-face__clock-hand {
-          &.outer {
-            top: 27px;
-            height: calc(50% - 27px);
-          }
-
-          &.inner {
-            top: calc(27px + #{$mate-timepicker-clock-padding});
-            height: calc(50% - 27px - #{$mate-timepicker-clock-padding});
-          }
-        }
-      }
-
-      &.minute-face {
-        .clock-face__clock-hand {
-          top: 27px;
-          height: calc(50% - 27px);
-
-          &.hand-point {
-            top: 15px;
-            height: calc(50% - 15px);
           }
         }
       }

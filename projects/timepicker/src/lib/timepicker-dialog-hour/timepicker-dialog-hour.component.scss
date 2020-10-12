@@ -1,0 +1,15 @@
+@import "../timepicker-variable";
+
+.clock-face.hour-face {
+  .clock-face__clock-hand {
+    &.outer {
+      top: 27px;
+      height: calc(50% - 27px);
+    }
+
+    &.inner {
+      top: calc(27px + #{$mate-timepicker-clock-padding});
+      height: calc(50% - 27px - #{$mate-timepicker-clock-padding});
+    }
+  }
+}

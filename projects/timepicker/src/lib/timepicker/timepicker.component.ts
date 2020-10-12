@@ -44,7 +44,6 @@ export const MATE_TIMEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER = {
 @Component({
     selector: 'mate-timepicker',
     template: '',
-    styleUrls: ['./timepicker.component.scss'],
     exportAs: 'mateTimepicker',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
