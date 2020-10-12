@@ -1,0 +1,22 @@
+<div class="mate-timepicker-face" (keydown)="onKeydown($event)">
+  <div #clockFace class="clock-face hour-face">
+
+    <div class="clock-face__container">
+      <div class="clock-face__number clock-face__number--outer" *ngFor="let hour of outerValues"
+           [class.active]="hour == value"
+           [ngStyle]="{ transform: 'translateX(-50%) rotateZ(' + (step * hour) + 'deg)'}">
+        <span [ngStyle]="{transform: 'rotateZ(' + (-step * hour) + 'deg)'}">{{hour | number:'1.0'}}</span>
+      </div>
+      <div class="clock-face__inner">
+        <div class="clock-face__number clock-face__number--inner"
+             *ngFor="let hour of innerValues" [class.active]="hour == value % 24"
+             [ngStyle]="{ transform: 'translateX(-50%) rotateZ(' + (step * (hour % 12)) + 'deg)'}">
+          <span [ngStyle]="{transform: 'rotateZ(' + (-step * (hour % 12)) + 'deg)'}">{{hour | number:'2.0'}}</span>
+        </div>
+      </div>
+    </div>
+    <span class="clock-face__clock-hand" [ngStyle]="{ transform: 'rotateZ(' + (step * value) + 'deg)'}"
+          [class.outer]="value > 0 && value <= 12" [class.inner]="value <= 0 || value > 12">
+    </span>
+  </div>
+</div>

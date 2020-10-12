@@ -18,7 +18,8 @@
     "paths": {
       "timepicker": [
         "dist/timepicker/timepicker",
-        "dist/timepicker"
+        "dist/timepicker",
+        "projects/timepicker/src/public-api.ts"
       ]
     }
   }

@@ -1,0 +1,4 @@
+<mate-timepicker-dialog [id]="timepicker.id" [defaultValue]="timepicker?._timepickerInput?.defaultValue"
+                        [second]="timepicker.second" [value]="timepicker._selected"
+                        (change)="timepicker.select($event)" (cancel)="timepicker.close()">
+</mate-timepicker-dialog>

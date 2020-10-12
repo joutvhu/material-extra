@@ -1,0 +1,12 @@
+<mate-timepicker-dialog-hour *ngIf="type == 'hour'" [value]="value"
+                             (change)="onChange($event)" (switchClock)="switchClock.emit($event)"
+                             (enterPress)="enterPress.emit()" (finish)="finish.emit()">
+</mate-timepicker-dialog-hour>
+<mate-timepicker-dialog-minute *ngIf="type == 'minute'" [value]="value"
+                               (change)="onChange($event)" (switchClock)="switchClock.emit($event)"
+                               (enterPress)="enterPress.emit()" (finish)="finish.emit()">
+</mate-timepicker-dialog-minute>
+<mate-timepicker-dialog-minute *ngIf="type == 'second'" [value]="value"
+                               (change)="onChange($event)" (switchClock)="switchClock.emit($event)"
+                               (enterPress)="enterPress.emit()" (finish)="finish.emit()">
+</mate-timepicker-dialog-minute>
