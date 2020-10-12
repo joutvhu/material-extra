@@ -1,0 +1,13 @@
+@import "../timepicker.variable";
+
+:host.mate-timepicker-dialog {
+  display: flex;
+  flex-direction: column;
+  padding: $mate-timepicker-dialog-padding;
+  width: $mate-timepicker-dialog-width;
+  height: $mate-timepicker-dialog-height;
+
+  .mate-dialog-container {
+    overflow: visible;
+  }
+}

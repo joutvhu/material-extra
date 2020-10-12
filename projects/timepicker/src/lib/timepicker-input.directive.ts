@@ -8,8 +8,9 @@ import {MatFormField} from '@angular/material/form-field';
 import {MAT_INPUT_VALUE_ACCESSOR} from '@angular/material/input';
 import {Subscription} from 'rxjs';
 
-import {Duration} from './mate-timepicker.model';
-import {MateTimepickerComponent} from './mate-timepicker/mate-timepicker.component';
+import {Duration} from './timepicker.model';
+import {TimepickerUtil} from './timepicker.util';
+import {MateTimepickerComponent} from './timepicker/timepicker.component';
 
 export class MateTimepickerInputEvent {
     value: Duration;
@@ -174,7 +175,7 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
     }
 
     sameTime(v1: Duration | null, v2: Duration | null): boolean {
-        return CommonUtil.isEqualsDeep(v1, v2) || v1 != null && v2 != null && typeof v1.equals === 'function' && v1.equals(v2);
+        return TimepickerUtil.isEqualsDeep(v1, v2) || v1 != null && v2 != null && typeof v1.equals === 'function' && v1.equals(v2);
     }
 
     _convertValue(value: any): Duration | null {

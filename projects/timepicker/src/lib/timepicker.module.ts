@@ -65,5 +65,5 @@ import {MATE_TIMEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER, MateTimepickerComponen
         MateTimepickerDialogFooterComponent
     ]
 })
-export class TimepickerModule {
+export class MateTimepickerModule {
 }
