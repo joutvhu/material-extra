@@ -1,10 +1,11 @@
-@import "../timepicker-variable";
+@import '../../../../theming/indigo-pink-theme';
+@import '../theming/timepicker-theme';
+@import "../theming/timepicker-variable";
 
 .mate-timepicker-content {
   display: block;
   border-radius: 4px;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
-  //background-color: var(--background-card);
   color: rgba(0, 0, 0, .87);
 }
 
@@ -21,3 +22,5 @@
     max-height: $mate-timepicker-touch-max-height;
   }
 }
+
+@include mate-timepicker-content-color(mat-get-color-config($theme))

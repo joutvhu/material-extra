@@ -1,4 +1,4 @@
-@import "../timepicker-variable";
+@import "../theming/timepicker-variable";
 
 :host.mate-timepicker-dialog-body {
   display: flex;
@@ -13,7 +13,6 @@
 
   ::ng-deep .mate-timepicker-face {
     user-select: none;
-    //color: var(--foreground-text);
 
     .clock-face {
       display: flex;
@@ -47,13 +46,6 @@
             border-radius: 50%;
             font-weight: 500;
           }
-
-          //&.active {
-          //  span {
-          //    color: mat-color($app-ui-primary, default-contrast);
-          //    background: mat-color($app-ui-primary);
-          //  }
-          //}
         }
 
         .clock-face__inner {
@@ -73,7 +65,6 @@
       .clock-face__clock-hand {
         position: absolute;
         width: 2px;
-        //background-color: mat-color($app-ui-primary);
         transform-origin: bottom center;
         z-index: 1;
 
@@ -96,12 +87,10 @@
             left: calc(50% - 10px);
             width: 4px;
             height: 4px;
-            //background-color: mat-color($app-ui-primary, default-contrast);
             border-radius: 50%;
             box-sizing: content-box;
             border-width: 8px;
             border-style: solid;
-            //border: 8px solid mat-color($app-ui-primary);
           }
         }
       }
