@@ -161,6 +161,46 @@
           }
         }
       }
+    },
+    "spinner": {
+      "projectType": "library",
+      "root": "projects/material/spinner",
+      "sourceRoot": "projects/material/spinner/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/material/spinner/tsconfig.lib.json",
+            "project": "projects/material/spinner/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/material/spinner/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/material/spinner/src/test.ts",
+            "tsConfig": "projects/material/spinner/tsconfig.spec.json",
+            "karmaConfig": "projects/material/spinner/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/material/spinner/tsconfig.lib.json",
+              "projects/material/spinner/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "material-extra",

@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:core": "copyfiles -f projects/material/core/* dist/core && copyfiles -f projects/material/core/theming/* dist/core/theming",
+    "build:spinner": "npm run build:core && ng build spinner",
     "build:timepicker": "npm run build:core && ng build timepicker",
     "publish:timepicker": "npm publish ./dist/timepicker --access public",
     "test": "ng test",

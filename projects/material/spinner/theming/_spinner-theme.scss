@@ -1,0 +1,22 @@
+@import '../../core/material-theming';
+
+@mixin mate-spinner-theme($theme-or-color-config) {
+  $theme: _mat-legacy-get-theme($theme-or-color-config);
+  $color: mat-get-color-config($theme);
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .mate-spinner .mate-progress-spinner {
+    color: mat-color($primary, text);
+
+    &.mat-accent {
+      color: mat-color($accent, text);
+    }
+
+    &.mat-warn {
+      color: mat-color($warn, text);
+    }
+  }
+}
