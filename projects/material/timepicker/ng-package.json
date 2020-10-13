@@ -5,7 +5,7 @@
     "@material-extra/core"
   ],
   "assets": [
-    "src/theming"
+    "theming"
   ],
   "lib": {
     "entryFile": "src/public-api.ts"
