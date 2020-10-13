@@ -1,6 +1,12 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/timepicker",
+  "whitelistedNonPeerDependencies": [
+    "@material-extra/core"
+  ],
+  "assets": [
+    "src/theming"
+  ],
   "lib": {
     "entryFile": "src/public-api.ts"
   }

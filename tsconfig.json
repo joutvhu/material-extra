@@ -17,9 +17,9 @@
     ],
     "paths": {
       "@material-extra/timepicker": [
-//        "dist/timepicker/timepicker",
-//        "dist/timepicker",
-        "projects/timepicker/src/public-api.ts"
+        "dist/timepicker/timepicker",
+        "dist/timepicker"
+//        "projects/timepicker/src/public-api.ts"
       ]
     }
   },
