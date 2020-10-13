@@ -1,4 +1,4 @@
-@import '../../../core/theming/indigo-pink-theme';
+@import '../../core/theming/indigo-pink-theme';
 @import 'timepicker-theme';
 
 @include mate-timepicker-theme(mat-get-color-config($theme))

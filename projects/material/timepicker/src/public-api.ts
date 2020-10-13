@@ -9,8 +9,13 @@ export * from './lib/timepicker-dialog-header/timepicker-dialog-header.component
 export * from './lib/timepicker-dialog-hour/timepicker-dialog-hour.component';
 export * from './lib/timepicker-dialog-minute/timepicker-dialog-minute.component';
 export * from './lib/timepicker-dialog/timepicker-dialog.component';
-export * from './lib/timepicker-face/timepicker-face.directive';
-export * from './lib/timepicker-input.directive';
 export * from './lib/timepicker-toggle/timepicker-toggle.component';
 export * from './lib/timepicker/timepicker.component';
+
+export * from './lib/timepicker-face/timepicker-face.directive';
+
+export * from './lib/timepicker.model';
+export * from './lib/timepicker-input.directive';
+export * from './lib/timepicker-intl.service';
+
 export * from './lib/timepicker.module';

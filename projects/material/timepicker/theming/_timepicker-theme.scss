@@ -1,4 +1,4 @@
-@import '../../../core/material-theming';
+@import '../../core/material-theming';
 
 @mixin mate-timepicker-toggle-color($config-or-theme) {
   $config: mat-get-color-config($config-or-theme);
