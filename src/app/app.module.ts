@@ -3,7 +3,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MateTimepickerModule} from '@material-extend/timepicker';
+import {MateTimepickerModule} from '@material-extra/timepicker';
 
 import {AppComponent} from './app.component';
 

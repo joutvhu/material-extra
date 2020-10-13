@@ -1,6 +1,25 @@
 {
-  "name": "@material-extend/timepicker",
+  "name": "@material-extra/timepicker",
+  "description": "Material timepicker component",
   "version": "1.0.0",
+  "author": "Giao Ho (joutvhu)",
+  "license": "MIT",
+  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/timepicker#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joutvhu/material-extra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joutvhu/material-extra/issues"
+  },
+  "keywords": [
+    "material-extra",
+    "material",
+    "timepicker"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/cdk": "^10.2.4",
     "@angular/common": "^10.1.5",
