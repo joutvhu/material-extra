@@ -1,10 +1,10 @@
 {
   "name": "@material-extra/core",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "Material Extra Core",
   "author": "Giao Ho (joutvhu)",
   "license": "MIT",
-  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/core#readme",
+  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/material/core#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/joutvhu/material-extra.git"

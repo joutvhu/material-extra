@@ -124,36 +124,36 @@
     },
     "timepicker": {
       "projectType": "library",
-      "root": "projects/timepicker",
-      "sourceRoot": "projects/timepicker/src",
+      "root": "projects/material/timepicker",
+      "sourceRoot": "projects/material/timepicker/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/timepicker/tsconfig.lib.json",
-            "project": "projects/timepicker/ng-package.json"
+            "tsConfig": "projects/material/timepicker/tsconfig.lib.json",
+            "project": "projects/material/timepicker/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/timepicker/tsconfig.lib.prod.json"
+              "tsConfig": "projects/material/timepicker/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/timepicker/src/test.ts",
-            "tsConfig": "projects/timepicker/tsconfig.spec.json",
-            "karmaConfig": "projects/timepicker/karma.conf.js"
+            "main": "projects/material/timepicker/src/test.ts",
+            "tsConfig": "projects/material/timepicker/tsconfig.spec.json",
+            "karmaConfig": "projects/material/timepicker/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/timepicker/tsconfig.lib.json",
-              "projects/timepicker/tsconfig.spec.json"
+              "projects/material/timepicker/tsconfig.lib.json",
+              "projects/material/timepicker/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
