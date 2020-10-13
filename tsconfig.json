@@ -17,18 +17,18 @@
     ],
     "paths": {
       "@material-extra/timepicker": [
+        "projects/material/timepicker/src/public-api.ts"
+      ],
+      "timepicker": [
         "dist/timepicker/timepicker",
         "dist/timepicker"
       ],
-      "timepicker": [
-        "projects/material/timepicker/src/public-api.ts"
-      ],
       "@material-extra/spinner": [
-        "dist/spinner/spinner",
-        "dist/spinner"
+        "projects/material/spinner/src/public-api.ts"
       ],
       "spinner": [
-        "projects/material/spinner/src/public-api.ts"
+        "dist/spinner/spinner",
+        "dist/spinner"
       ]
     }
   },

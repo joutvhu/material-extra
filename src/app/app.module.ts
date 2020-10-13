@@ -4,9 +4,9 @@ import {MatInputModule} from '@angular/material/input';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {MateTimepickerModule} from 'timepicker';
+import {MateSpinnerModule} from '@material-extra/spinner';
+import {MateTimepickerModule} from '@material-extra/timepicker';
 import {AppComponent} from './app.component';
-import {MateSpinnerModule} from 'spinner';
 
 @NgModule({
     declarations: [
