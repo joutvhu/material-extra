@@ -1,0 +1,27 @@
+{
+  "name": "@material-extra/core",
+  "version": "2.1.0",
+  "description": "Material Extra Core",
+  "author": "Giao Ho (joutvhu)",
+  "license": "MIT",
+  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/material/core#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joutvhu/material-extra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joutvhu/material-extra/issues"
+  },
+  "keywords": [
+    "material-extra",
+    "material",
+    "material-extra-core",
+    "material-extra-theme"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "publish": "npm publish --access public"
+  }
+}

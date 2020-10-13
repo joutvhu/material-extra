@@ -1,0 +1,106 @@
+@import '../../core/material-theming';
+
+@mixin mate-timepicker-toggle-color($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+  $foreground: map-get($config, foreground);
+
+  .mate-timepicker-toggle {
+    color: mat-color($foreground, icon);
+  }
+
+  .mate-timepicker-toggle-active {
+    color: mat-color(map-get($config, primary), text);
+
+    &.mat-accent {
+      color: mat-color(map-get($config, accent), text);
+    }
+
+    &.mat-warn {
+      color: mat-color(map-get($config, warn), text);
+    }
+  }
+}
+
+@mixin mate-timepicker-clock-face-color($palette) {
+  .mate-timepicker-face {
+    .clock-face {
+      .clock-face__container {
+        .clock-face__number {
+          &.active {
+            span {
+              color: mat-color($palette, default-contrast);
+              background: mat-color($palette);
+            }
+          }
+        }
+      }
+
+      .clock-face__clock-hand {
+        background-color: mat-color($palette);
+
+        &.hand-point {
+          &:before {
+            background-color: mat-color($palette, default-contrast);
+            border-color: mat-color($palette);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin mate-timepicker-content-color($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+  $foreground: map-get($config, foreground);
+  $background: map-get($config, background);
+  $disabled-color: mat-color($foreground, disabled-text);
+
+  .mate-timepicker-content {
+    background-color: mat-color($background, card);
+    color: mat-color($foreground, text);
+
+    .mate-timepicker-dialog-header {
+      .mate-timepicker-dial {
+        .timepicker-dial-time {
+          color: mat-color($foreground, secondary-text);
+
+          label.timepicker-dial-time-item {
+            &.active {
+              color: mat-color($foreground, text);
+            }
+          }
+        }
+      }
+    }
+
+    .mate-timepicker-dialog-body {
+      .mate-timepicker-face {
+        color: mat-color($foreground, text);
+      }
+    }
+
+    @include mate-timepicker-clock-face-color(map-get($config, primary));
+
+    &.mat-accent {
+      @include mate-timepicker-clock-face-color(map-get($config, accent));
+    }
+
+    &.mat-warn {
+      @include mate-timepicker-clock-face-color(map-get($config, warn));
+    }
+  }
+}
+
+@mixin mate-timepicker-color($config-or-theme) {
+  @include mate-timepicker-toggle-color($config-or-theme);
+  @include mate-timepicker-content-color($config-or-theme);
+}
+
+@mixin mate-timepicker-theme($theme-or-color-config) {
+  $theme: _mat-legacy-get-theme($theme-or-color-config);
+  $color: mat-get-color-config($theme);
+
+  @if $color != null {
+    @include mate-timepicker-color($color);
+  }
+}

@@ -1,0 +1,11 @@
+@import '../../../../core/theming/indigo-pink-theme';
+@import '../../../theming/timepicker-theme';
+
+:host.mate-timepicker-toggle {
+  .mat-icon-button {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@include mate-timepicker-toggle-color(mat-get-color-config($theme))

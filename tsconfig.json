@@ -1,38 +1,38 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": [
-      "es5",
-      "es6",
-      "dom",
-      "es2016",
-      "es2017",
-      "es2018",
-      "esnext"
-    ],
-    "declaration": true,
     "baseUrl": "./",
-    "rootDir": "./src",
-    "outDir": "./lib",
-    "removeComments": false,
-    "strictNullChecks": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "esModuleInterop": true,
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "resolveJsonModule": true,
+    "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@material-extra/timepicker": [
+        "dist/timepicker/timepicker",
+        "dist/timepicker"
+      ],
+      "timepicker": [
+        "projects/material/timepicker/src/public-api.ts"
+      ],
+      "@material-extra/spinner": [
+        "dist/spinner/spinner",
+        "dist/spinner"
+      ],
+      "spinner": [
+        "projects/material/spinner/src/public-api.ts"
+      ]
+    }
   },
-  "exclude": [
-    "./node_modules"
-  ],
-  "include": [
-    "./src/**/*"
-  ]
+  "angularCompilerOptions": {
+    "permitPublication": true
+  }
 }

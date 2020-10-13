@@ -1,6 +1,0 @@
-<div [@fadeIn]="'in'" class="mate-spinner">
-  <div *ngIf="!template" [class]="spinnerClass" [style.color]="color">
-    <div *ngFor="let index of divArray"></div>
-  </div>
-  <div *ngIf="template" [innerHTML]="template"></div>
-</div>

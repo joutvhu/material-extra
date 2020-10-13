@@ -1,11 +1,19 @@
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
-import {DEFAULTS, LOADERS, Size} from '~core/modules/mate-spinner/mate-spinner.enum';
+import {DEFAULTS, LOADERS, Size} from './spinner.enum';
 
 @Component({
     selector: 'mate-spinner',
-    templateUrl: './mate-spinner.component.html',
+    template: `
+        <div [@fadeIn]="'in'" class="mate-spinner">
+            <div *ngIf="!template" [class]="spinnerClass" [style.color]="color">
+                <div *ngFor="let index of divArray"></div>
+            </div>
+            <div *ngIf="template" [innerHTML]="template"></div>
+        </div>
+    `,
+    styleUrls: ['./spinner.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
         trigger('fadeIn', [

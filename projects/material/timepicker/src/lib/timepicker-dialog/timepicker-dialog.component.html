@@ -1,0 +1,8 @@
+<mate-timepicker-dialog-header [type]="clockActive" [value]="value" [second]="second" (active)="onActive($event)">
+</mate-timepicker-dialog-header>
+<mate-timepicker-dialog-body [value]="valueActive" [type]="clockActive"
+                             (change)="onChange($event)" (switchClock)="onClockSwitch($event)"
+                             (enterPress)="onOk()" (finish)="onSwitch()">
+</mate-timepicker-dialog-body>
+<mate-timepicker-dialog-footer (clickOk)="onOk()" (clickCancel)="onCancel()">
+</mate-timepicker-dialog-footer>
