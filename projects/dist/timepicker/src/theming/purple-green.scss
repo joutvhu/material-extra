@@ -1,4 +1,0 @@
-@import '../../../core/theming/purple-green-theme';
-@import 'timepicker-theme';
-
-@include mate-timepicker-theme(mat-get-color-config($theme))
