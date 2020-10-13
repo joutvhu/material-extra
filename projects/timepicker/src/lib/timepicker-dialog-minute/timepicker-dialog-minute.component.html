@@ -1,0 +1,13 @@
+<div class="mate-timepicker-face" (keydown)="onKeydown($event)">
+  <div #clockFace class="clock-face minute-face">
+    <div class="clock-face__container">
+      <div class="clock-face__number" *ngFor="let minute of values" [class.active]="minute == value % 60"
+           [ngStyle]="{ transform: 'translateX(-50%) rotateZ(' + (step * minute) + 'deg)'}">
+        <span [ngStyle]="{transform: 'rotateZ(' + (-step * minute) + 'deg)'}">{{minute | number:'2.0'}}</span>
+      </div>
+    </div>
+    <span class="clock-face__clock-hand" [ngStyle]="{ transform: 'rotateZ(' + (step * value) + 'deg)'}"
+          [class.hand-point]="value % 5 != 0">
+    </span>
+  </div>
+</div>

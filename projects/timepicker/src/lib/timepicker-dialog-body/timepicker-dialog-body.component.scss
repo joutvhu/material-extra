@@ -1,0 +1,99 @@
+@import "../theming/timepicker-variable";
+
+:host.mate-timepicker-dialog-body {
+  display: flex;
+  flex: auto;
+  width: 100%;
+  margin: 1rem 0;
+
+  mate-timepicker-dialog-hour, mate-timepicker-dialog-minute {
+    display: block;
+    margin: auto;
+  }
+
+  ::ng-deep .mate-timepicker-face {
+    user-select: none;
+
+    .clock-face {
+      display: flex;
+      position: relative;
+      width: 260px;
+      height: 260px;
+      margin: auto;
+      border-radius: 50%;
+      justify-content: center;
+      box-sizing: border-box;
+
+      .clock-face__container {
+        height: 100%;
+
+        .clock-face__number {
+          position: absolute;
+          height: 100%;
+          font-size: 14px;
+          width: 30px;
+          text-align: center;
+          z-index: 10;
+
+          span {
+            display: flex;
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            user-select: none;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: 500;
+          }
+        }
+
+        .clock-face__inner {
+          display: flex;
+          position: absolute;
+          top: $mate-timepicker-clock-padding;
+          height: calc(100% - (2 * #{$mate-timepicker-clock-padding}));
+          border-radius: 50%;
+
+          .clock-face__number {
+            font-size: 12px;
+            width: 30px;
+          }
+        }
+      }
+
+      .clock-face__clock-hand {
+        position: absolute;
+        width: 2px;
+        transform-origin: bottom center;
+        z-index: 1;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: -2px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: inherit;
+        }
+
+        &.hand-point {
+          &:before {
+            content: "";
+            position: absolute;
+            top: -11px;
+            left: calc(50% - 10px);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            box-sizing: content-box;
+            border-width: 8px;
+            border-style: solid;
+          }
+        }
+      }
+    }
+  }
+}

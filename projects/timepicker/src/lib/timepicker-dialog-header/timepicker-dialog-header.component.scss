@@ -1,0 +1,15 @@
+:host.mate-timepicker-dialog-header {
+  display: block;
+  width: 100%;
+
+  .mate-timepicker-dial {
+    margin: 0 auto;
+
+    .timepicker-dial-time {
+      text-align: center;
+      align-content: center;
+      font-size: 44px;
+      line-height: normal;
+    }
+  }
+}

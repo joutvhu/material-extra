@@ -1,0 +1,13 @@
+{
+  "name": "@material-extend/timepicker",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/cdk": "^10.2.4",
+    "@angular/common": "^10.1.5",
+    "@angular/core": "^10.1.5",
+    "@angular/material": "^10.2.4"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

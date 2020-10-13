@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  margin: auto;
+
+  > * {
+    margin: 50px auto;
+  }
+}

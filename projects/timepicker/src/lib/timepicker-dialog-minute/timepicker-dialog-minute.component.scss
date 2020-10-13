@@ -1,0 +1,11 @@
+.clock-face.minute-face {
+  .clock-face__clock-hand {
+    top: 27px;
+    height: calc(50% - 27px);
+
+    &.hand-point {
+      top: 15px;
+      height: calc(50% - 15px);
+    }
+  }
+}
