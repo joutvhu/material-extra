@@ -1,0 +1,4 @@
+@import '../../../core/theming/deeppurple-amber-theme';
+@import 'timepicker-theme';
+
+@include mate-timepicker-theme(mat-get-color-config($theme))

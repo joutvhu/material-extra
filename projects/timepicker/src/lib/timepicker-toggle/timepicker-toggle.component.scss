@@ -1,5 +1,5 @@
-@import '../../../../theming/indigo-pink-theme';
-@import '../theming/timepicker-theme';
+@import '../../../../core/theming/indigo-pink-theme';
+@import '../../theming/timepicker-theme';
 
 :host.mate-timepicker-toggle {
   .mat-icon-button {

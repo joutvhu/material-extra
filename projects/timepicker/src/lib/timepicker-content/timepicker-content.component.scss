@@ -1,6 +1,6 @@
-@import '../../../../theming/indigo-pink-theme';
-@import '../theming/timepicker-theme';
-@import "../theming/timepicker-variable";
+@import '../../../../core/theming/indigo-pink-theme';
+@import '../../theming/timepicker-theme';
+@import "../styles/timepicker-variable";
 
 .mate-timepicker-content {
   display: block;

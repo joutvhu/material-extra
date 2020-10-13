@@ -1,7 +1,7 @@
 {
   "name": "@material-extra/timepicker",
+  "version": "1.0.2",
   "description": "Material timepicker component",
-  "version": "1.0.0",
   "author": "Giao Ho (joutvhu)",
   "license": "MIT",
   "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/timepicker#readme",
@@ -27,6 +27,7 @@
     "@angular/material": "^10.2.4"
   },
   "dependencies": {
+    "@material-extra/core": "^1.0.0",
     "tslib": "^2.0.0"
   }
 }
