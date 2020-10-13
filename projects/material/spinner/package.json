@@ -1,10 +1,10 @@
 {
-  "name": "@material-extra/timepicker",
-  "version": "1.0.4",
-  "description": "Material timepicker component",
+  "name": "@material-extra/spinner",
+  "version": "0.0.1",
+  "description": "Material spinner component",
   "author": "Giao Ho (joutvhu)",
   "license": "MIT",
-  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/material/timepicker#readme",
+  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/material/spinner#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/joutvhu/material-extra.git"
@@ -15,13 +15,13 @@
   "keywords": [
     "material-extra",
     "material",
-    "timepicker"
+    "spinner"
   ],
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "@angular/cdk": ">=10.0.0",
+    "@angular/animations": ">=10.0.0",
     "@angular/common": ">=10.0.0",
     "@angular/core": ">=10.0.0",
     "@angular/material": ">=10.0.0"

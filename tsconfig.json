@@ -22,6 +22,13 @@
       ],
       "timepicker": [
         "projects/material/timepicker/src/public-api.ts"
+      ],
+      "@material-extra/spinner": [
+        "dist/spinner/spinner",
+        "dist/spinner"
+      ],
+      "spinner": [
+        "projects/material/spinner/src/public-api.ts"
       ]
     }
   },
