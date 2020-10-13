@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MateTimepickerModule} from 'timepicker';
 import {AppComponent} from './app.component';
+import {MateSpinnerModule} from 'spinner';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import {AppComponent} from './app.component';
         BrowserAnimationsModule,
         MatInputModule,
         MatFormFieldModule,
+        MateSpinnerModule,
         MateTimepickerModule
     ],
     providers: [],

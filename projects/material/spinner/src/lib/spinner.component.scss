@@ -1,3 +1,6 @@
+@import '../../../core/theming/indigo-pink-theme';
+@import '../../theming/spinner-theme';
+
 .mate-spinner {
   .spinner-ball-8bits {
     display: block;
@@ -11663,3 +11666,5 @@
     }
   }
 }
+
+@include mate-spinner-theme(mat-get-color-config($theme));
