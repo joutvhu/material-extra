@@ -1,0 +1,43 @@
+{
+  "name": "@material-extra/timepicker",
+  "version": "1.0.3",
+  "description": "Material timepicker component",
+  "author": "Giao Ho (joutvhu)",
+  "license": "MIT",
+  "homepage": "https://github.com/joutvhu/material-extra/tree/master/projects/material/timepicker#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joutvhu/material-extra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joutvhu/material-extra/issues"
+  },
+  "keywords": [
+    "material-extra",
+    "material",
+    "timepicker"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@angular/cdk": "^10.2.4",
+    "@angular/common": "^10.1.5",
+    "@angular/core": "^10.1.5",
+    "@angular/material": "^10.2.4"
+  },
+  "dependencies": {
+    "@material-extra/core": "^2.1.0",
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/material-extra-timepicker.umd.js",
+  "module": "fesm2015/material-extra-timepicker.js",
+  "es2015": "fesm2015/material-extra-timepicker.js",
+  "esm2015": "esm2015/material-extra-timepicker.js",
+  "fesm2015": "fesm2015/material-extra-timepicker.js",
+  "typings": "material-extra-timepicker.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
+}
