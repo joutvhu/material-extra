@@ -74,7 +74,10 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
     private _disabled: boolean;
     private _defaultValue: Duration;
     private _timepickerSubscription = Subscription.EMPTY;
-    private _validator: ValidatorFn | null = Validators.compose([]);
+    private _validator: ValidatorFn | null;
+
+    /** Whether the last value set on the input was valid. */
+    private _lastValueValid = true;
 
     public _timepicker: MateTimepickerComponent;
     public _disabledChange = new EventEmitter<boolean>();
@@ -108,6 +111,8 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
     }
 
     set value(value: Duration | null) {
+        const lastValueValid = this._lastValueValid;
+        this._lastValueValid = true;
         const oldDate = this.value;
         value = this._convertValue(value);
         this._value = value;
@@ -115,6 +120,9 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
 
         if (!this.sameTime(oldDate, value)) {
             this._valueChange.emit(value);
+        }
+        if (!lastValueValid) {
+            this._validatorOnChange();
         }
     }
 
@@ -166,6 +174,24 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
         private _elementRef: ElementRef<HTMLInputElement>,
         @Optional() private _formField: MatFormField
     ) {
+        this._validator = Validators.compose([this._formatValidator]);
+    }
+
+    private _formatValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+        return this._lastValueValid ? null : {
+            matTimepickerFormat: {
+                text: this._elementRef.nativeElement.value,
+                actual: this.value
+            }
+        };
+    };
+
+    private _validateRegex(): RegExp {
+        if (this._timepicker.second) {
+            return /^(\d|[0-1]\d|2[0-3]):(\d|[0-5]\d):(\d|[0-5]\d)$/;
+        } else {
+            return /^(\d|[0-1]\d|2[0-3]):(\d|[0-5]\d)$/;
+        }
     }
 
     ngOnDestroy(): void {
@@ -183,15 +209,29 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
         }
     }
 
+    _emitChange(value: Duration | null) {
+        this._value = value;
+        this._cvaOnChange(value);
+        this._valueChange.emit(value);
+        this.timeInput.emit(new MateTimepickerInputEvent(this, this._elementRef.nativeElement));
+    }
+
     @HostListener('input', ['$event.target.value'])
     _onInput(value: string) {
-        const time = this._convertValue(value);
-        if (!this.sameTime(this._value, time)) {
-            this._value = time;
-            this._cvaOnChange(time);
-            this._valueChange.emit(time);
-            this.timeInput.emit(new MateTimepickerInputEvent(this, this._elementRef.nativeElement));
-        } else if (time == null) {
+        if (this._timepicker.repair || value == null || value.length === 0 ||
+            this._validateRegex().test(value)) {
+            const lastValueValid = this._lastValueValid;
+            this._lastValueValid = true;
+
+            const time = this._convertValue(value);
+            if (!this.sameTime(this._value, time)) {
+                this._emitChange(time);
+            } else if (time == null || !lastValueValid) {
+                this._validatorOnChange();
+            }
+        } else {
+            this._lastValueValid = false;
+            this._emitChange(null);
             this._validatorOnChange();
         }
     }
@@ -204,7 +244,9 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
     @HostListener('blur')
     _onBlur() {
         // Reformat the input only if we have a valid value.
-        this._formatValue(this.value);
+        if (this._timepicker.repair || this._lastValueValid) {
+            this._formatValue(this.value);
+        }
         this._onTouched();
     }
 

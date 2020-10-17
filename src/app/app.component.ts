@@ -9,4 +9,9 @@ import {FormControl, Validators} from '@angular/forms';
 export class AppComponent {
     title = 'material-extra';
     public fieldControl: FormControl = new FormControl('', Validators.required);
+
+    constructor() {
+        this.fieldControl.statusChanges
+            .subscribe(value => console.log(this.fieldControl.errors));
+    }
 }

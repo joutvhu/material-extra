@@ -78,6 +78,8 @@ export class MateTimepickerComponent implements OnInit, OnDestroy, CanColor {
         this._validSelected = value;
     }
 
+    @Input() repair: boolean = true;
+
     @Input()
     get touchUi(): boolean {
         return this._touchUi;
