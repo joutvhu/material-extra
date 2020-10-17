@@ -50,7 +50,9 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
 
     @Input()
     set mateTimepicker(value: MateTimepickerComponent) {
-        if (!value) return;
+        if (!value) {
+            return;
+        }
 
         this._timepicker = value;
         this._timepicker._registerInput(this);
@@ -76,8 +78,9 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
         this._value = value;
         this._formatValue(value);
 
-        if (!this.sameTime(oldDate, value))
+        if (!this.sameTime(oldDate, value)) {
             this._valueChange.emit(value);
+        }
     }
 
     @Input()
@@ -94,7 +97,9 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
             this._disabledChange.emit(newValue);
         }
 
-        if (newValue && element.blur) element.blur();
+        if (newValue && element.blur) {
+            element.blur();
+        }
     }
 
     @Input()
@@ -151,7 +156,9 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
             this._cvaOnChange(time);
             this._valueChange.emit(time);
             this.timeInput.emit(new MateTimepickerInputEvent(this, this._elementRef.nativeElement));
-        } else if (time == null) this._validatorOnChange();
+        } else if (time == null) {
+            this._validatorOnChange();
+        }
     }
 
     @HostListener('change')
@@ -180,13 +187,15 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
 
     _convertValue(value: any): Duration | null {
         if (value && !(value instanceof Duration)) {
-            if (typeof value === 'string')
+            if (typeof value === 'string') {
                 return Duration.fromString(value);
-            else if (typeof value === 'number')
+            } else if (typeof value === 'number') {
                 return Duration.fromMillis(value);
-            else if (value instanceof Date)
+            } else if (value instanceof Date) {
                 return Duration.fromDate(value);
-            else return null;
+            } else {
+                return null;
+            }
         }
         return value;
     }
@@ -195,9 +204,10 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
         let timeValue = '';
         if (value instanceof Duration) {
             timeValue = `${this._decimalPipe.transform(value.hour, '2.0')}:${this._decimalPipe.transform(value.minute, '2.0')}`;
-            if (this._timepicker.second)
+            if (this._timepicker.second) {
                 timeValue = typeof value.second === 'number' ?
                     `${timeValue}:${this._decimalPipe.transform(value.second, '2.0')}` : '';
+            }
         }
         this._elementRef.nativeElement.value = timeValue;
     }
