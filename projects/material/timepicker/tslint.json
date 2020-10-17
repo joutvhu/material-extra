@@ -14,6 +14,7 @@
       "lib",
       "mate",
       "kebab-case"
-    ]
+    ],
+    "member-ordering": false
   }
 }

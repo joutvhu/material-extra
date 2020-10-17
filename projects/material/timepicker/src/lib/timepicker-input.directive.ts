@@ -1,8 +1,28 @@
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {DOWN_ARROW} from '@angular/cdk/keycodes';
 import {DecimalPipe} from '@angular/common';
-import {Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnDestroy, Optional, Output} from '@angular/core';
-import {AbstractControl, ControlValueAccessor, ValidationErrors, Validator, ValidatorFn, Validators} from '@angular/forms';
+import {
+    Directive,
+    ElementRef,
+    EventEmitter,
+    forwardRef,
+    HostBinding,
+    HostListener,
+    Input,
+    OnDestroy,
+    Optional,
+    Output
+} from '@angular/core';
+import {
+    AbstractControl,
+    ControlValueAccessor,
+    NG_VALIDATORS,
+    NG_VALUE_ACCESSOR,
+    ValidationErrors,
+    Validator,
+    ValidatorFn,
+    Validators
+} from '@angular/forms';
 import {ThemePalette} from '@angular/material/core';
 import {MatFormField} from '@angular/material/form-field';
 import {MAT_INPUT_VALUE_ACCESSOR} from '@angular/material/input';
@@ -11,6 +31,18 @@ import {Subscription} from 'rxjs';
 import {Duration} from './timepicker.model';
 import {TimepickerUtil} from './timepicker.util';
 import {MateTimepickerComponent} from './timepicker/timepicker.component';
+
+export const MATE_TIMEPICKER_VALUE_ACCESSOR: any = {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => MateTimepickerInputDirective),
+    multi: true
+};
+
+export const MATE_TIMEPICKER_VALIDATORS: any = {
+    provide: NG_VALIDATORS,
+    useExisting: forwardRef(() => MateTimepickerInputDirective),
+    multi: true
+};
 
 export class MateTimepickerInputEvent {
     value: Duration;
@@ -25,8 +57,10 @@ export class MateTimepickerInputEvent {
 @Directive({
     selector: 'input[mateTimepicker]',
     providers: [
-        {provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: MateTimepickerInputDirective},
-        DecimalPipe
+        DecimalPipe,
+        MATE_TIMEPICKER_VALUE_ACCESSOR,
+        MATE_TIMEPICKER_VALIDATORS,
+        {provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: MateTimepickerInputDirective}
     ],
     host: {
         '[attr.aria-haspopup]': '_timepicker ? "dialog" : null',
@@ -41,6 +75,7 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
     private _defaultValue: Duration;
     private _timepickerSubscription = Subscription.EMPTY;
     private _validator: ValidatorFn | null = Validators.compose([]);
+
     public _timepicker: MateTimepickerComponent;
     public _disabledChange = new EventEmitter<boolean>();
     public _valueChange = new EventEmitter<Duration | null>();
