@@ -1,6 +1,6 @@
 {
   "name": "@material-extra/timepicker",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Material timepicker component",
   "author": "Giao Ho (joutvhu)",
   "license": "MIT",
@@ -19,6 +19,9 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "publish": "npm publish --access public"
   },
   "peerDependencies": {
     "@angular/cdk": ">=10.0.0",

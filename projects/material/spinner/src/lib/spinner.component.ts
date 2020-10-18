@@ -38,8 +38,9 @@ export class MateSpinnerComponent {
 
     @Input()
     public set type(value: string) {
-        if (value == null || typeof LOADERS[value] !== 'number')
+        if (value == null || typeof LOADERS[value] !== 'number') {
             value = DEFAULTS.SPINNER_TYPE;
+        }
         this._type = value;
         this.divCount = typeof LOADERS[this._type] === 'number' ? LOADERS[this._type] : 0;
         this.divArray = Array(this.divCount).fill(0).map((x, i) => i);
@@ -55,15 +56,17 @@ export class MateSpinnerComponent {
     }
 
     public get color(): ThemePalette | string {
-        if (typeof this._color === 'string' && !['primary', 'accent', 'warn'].includes(this._color))
+        if (typeof this._color === 'string' && !['primary', 'accent', 'warn'].includes(this._color)) {
             return this._color;
+        }
         return null;
     }
 
     public get spinnerClass(): string {
         const sizeClass = ['mate-progress-spinner'];
-        if (['primary', 'accent', 'warn'].includes(this._color))
+        if (['primary', 'accent', 'warn'].includes(this._color)) {
             sizeClass.push(`mat-${this._color}`);
+        }
         sizeClass.push('spinner-' + this.type);
         switch (this.size.toLowerCase()) {
             case 'small':

@@ -4,6 +4,7 @@ import {PortalModule} from '@angular/cdk/portal';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRippleModule} from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MateTimepickerContentComponent} from './timepicker-content/timepicker-content.component';
@@ -37,6 +38,7 @@ import {MATE_TIMEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER, MateTimepickerComponen
     imports: [
         CommonModule,
         MatButtonModule,
+        MatRippleModule,
         MatDialogModule,
         OverlayModule,
         A11yModule,

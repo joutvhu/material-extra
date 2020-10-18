@@ -2,7 +2,7 @@
 
 <mat-form-field class="example-timepicker" appearance="outline">
   <mat-label>Timepicker</mat-label>
-  <input matInput [mateTimepicker]="timepicker">
+  <input matInput [required]="true" [mateTimepicker]="timepicker" [formControl]="fieldControl">
   <mate-timepicker-toggle matSuffix [for]="timepicker"></mate-timepicker-toggle>
-  <mate-timepicker #timepicker [second]="true"></mate-timepicker>
+  <mate-timepicker #timepicker [second]="true" [repair]="true"></mate-timepicker>
 </mat-form-field>
