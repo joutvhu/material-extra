@@ -10,6 +10,15 @@
       align-content: center;
       font-size: 44px;
       line-height: normal;
+      user-select: none;
+
+      .timepicker-dial-time-item {
+        display: inline-flex;
+        padding: 0 .25em;
+        cursor: pointer;
+        user-select: none;
+        border-radius: .2em;
+      }
     }
   }
 }

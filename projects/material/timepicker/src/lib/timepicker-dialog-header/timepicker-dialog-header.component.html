@@ -1,15 +1,18 @@
 <div class="mate-timepicker-dial">
   <div class="timepicker-dial-time">
-    <label class="timepicker-dial-time-item" [class.active]="type == 'hour'" (click)="onActive('hour')">
+    <label matRipple class="timepicker-dial-time-item" [class.active]="type == 'hour'"
+           (click)="onActive('hour')">
       {{value.hour | number:'2.0'}}
     </label>
     <span>:</span>
-    <label class="timepicker-dial-time-item" [class.active]="type == 'minute'" (click)="onActive('minute')">
+    <label matRipple class="timepicker-dial-time-item" [class.active]="type == 'minute'"
+           (click)="onActive('minute')">
       {{value.minute | number:'2.0'}}
     </label>
     <ng-container *ngIf="second">
       <span>:</span>
-      <label class="timepicker-dial-time-item" [class.active]="type == 'second'" (click)="onActive('second')">
+      <label matRipple class="timepicker-dial-time-item" [class.active]="type == 'second'"
+             (click)="onActive('second')">
         {{value.second | number:'2.0'}}
       </label>
     </ng-container>

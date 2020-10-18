@@ -20,6 +20,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
   "peerDependencies": {
     "@angular/animations": ">=10.0.0",
     "@angular/common": ">=10.0.0",

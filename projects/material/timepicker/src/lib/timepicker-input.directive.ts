@@ -218,21 +218,21 @@ export class MateTimepickerInputDirective implements ControlValueAccessor, OnDes
 
     @HostListener('input', ['$event.target.value'])
     _onInput(value: string) {
+        const lastValueValid = this._lastValueValid;
         if (this._timepicker.repair || value == null || value.length === 0 ||
             this._validateRegex().test(value)) {
-            const lastValueValid = this._lastValueValid;
             this._lastValueValid = true;
 
             const time = this._convertValue(value);
-            if (!this.sameTime(this._value, time)) {
+            if (!this.sameTime(this._value, time))
                 this._emitChange(time);
-            } else if (time == null || !lastValueValid) {
+            else if (time == null || !lastValueValid)
                 this._validatorOnChange();
-            }
         } else {
             this._lastValueValid = false;
             this._emitChange(null);
-            this._validatorOnChange();
+            if (lastValueValid)
+                this._validatorOnChange();
         }
     }
 
